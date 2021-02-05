@@ -1,4 +1,4 @@
-const url = 'http://192.168.1.63';
+const url = "http://" + location.host + "/";
 
 function check(id) {
     let chBox = document.getElementById(id);
@@ -10,7 +10,7 @@ function check(id) {
 }
 
 function doGet(id) {
-    fetch(url + "/" + id).then(function (response) {
+    fetch(url + id, {mode: "no-cors"}).then(function (response) {
         if (response.status == 0) {
             console.log(response.url);
             response.text().then(function (r) {
