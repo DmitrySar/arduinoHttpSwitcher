@@ -29,6 +29,7 @@ void setup() {
 void loop() {
   char* param;
   if (param = ethernet.serviceRequest()) {
+    ethernet.print(F("{\"value\": 11}"));
       if (strcmp(param, "10") == 0) {
         ethernet.print(switcher(SW1, false));
     } else if (strcmp(param, "11") == 0) {
@@ -45,7 +46,7 @@ void loop() {
 
     ethernet.respond();
   }
-  delay(50);
+  delay(100);
 }
 
 
