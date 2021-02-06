@@ -3,8 +3,8 @@
 // 11 - switch 1 is on
 // 20 - switch 2 is off
 // 21 - switch 2 is on
-// 13 - read status from switch1
-// 23 - read status from switch2
+// 12 - read status from switch1
+// 22 - read status from switch2
 
 #include "etherShield.h"
 #include "ETHER_28J60.h"
@@ -38,9 +38,9 @@ void loop() {
         ethernet.print(switcher(SW2, false));
     } else if (strcmp(param, "21") == 0) {
         ethernet.print(switcher(SW2, true));
-    } else if (strcmp(param, "13") == 0) {
+    } else if (strcmp(param, "12") == 0) {
         ethernet.print(digitalRead(SW1));
-    } else if (strcmp(param, "23") == 0) {
+    } else if (strcmp(param, "22") == 0) {
         ethernet.print(digitalRead(SW2));
     }
 
