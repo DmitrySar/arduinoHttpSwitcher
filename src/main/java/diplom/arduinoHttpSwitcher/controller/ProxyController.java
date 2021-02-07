@@ -5,8 +5,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
 
-@Controller
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
+
+@RestController
 public class ProxyController {
 
     @Value("${arduino.url}")
@@ -14,6 +20,6 @@ public class ProxyController {
 
     @GetMapping("/{id}")
     public String getProxy(@PathVariable String id) {
-        return "redirect:" + url + id;
+        return new RestTemplate().getForObject(url + id, String.class);
     }
 }

@@ -10,8 +10,8 @@ function check(id) {
 }
 
 function doGet(id) {
-    fetch(url + id, {mode: "no-cors"}).then(function (response) {
-        if (response.status == 0) {
+    fetch(url + id).then(function (response) {
+        if (response.ok) {
             console.log(response.url);
             response.text().then(function (r) {
                 switch (id) {
