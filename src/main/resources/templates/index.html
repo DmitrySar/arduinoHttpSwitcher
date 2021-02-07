@@ -4,11 +4,20 @@
     <meta charset="UTF-8">
     <title>Switcher</title>
     <script type="text/javascript" src="js/switch.js"></script>
+    <link rel="stylesheet" href="css/checkbox.css">
 </head>
-<body>
+<body onload="startAsync()">
 <h1>Переключатели</h1>
 <h2 id="log">сообщения</h2>
-<p><input id="1" type="checkbox" onchange="check(1)"> Switch1</p>
-<p><input id="2" type="checkbox" value="2" onchange="check(2)"> Switch2</p>
-</body>
+<div class="switch">
+    <input type="checkbox" id="1" onchange="check(1)">
+    <label><i></i></label>
+</div>
+<div>
+    <p><br></p>
+</div>
+<div class="switch">
+    <input type="checkbox" id="2" onchange="check(2)">
+    <label><i></i></label>
+</div></body>
 </html>

@@ -1,4 +1,12 @@
 const url = "http://" + location.host + "/";
+const TIMEOUT = 2000;
+
+function startAsync() {
+    setInterval(() => {
+        doGet("12");
+        doGet("22");
+    }, TIMEOUT);
+}
 
 function check(id) {
     let chBox = document.getElementById(id);
@@ -9,29 +17,38 @@ function check(id) {
     }
 }
 
+function doCheck(id, flag) {
+    let chBox = document.getElementById(id);
+    chBox.checked = flag == "1" ? true : false;
+    // check(id);
+}
+
 function doGet(id) {
     fetch(url + id).then(function (response) {
         if (response.ok) {
-            console.log(response.url);
             response.text().then(function (r) {
                 switch (id) {
                     case "10":
-                        toLog("Выкл 1");
+                        toLog("Выкл 1 ");
                         break;
                     case "11":
-                        toLog("Вкл 1");
+                        toLog("Вкл 1 ");
                         break;
                     case "20":
-                        toLog("Выкл 2");
+                        toLog("Выкл 2 ");
                         break;
                     case "21":
-                        toLog("Вкл 2");
+                        toLog("Вкл 2 ");
                         break;
-                    default: toLog(r);
+                    case "12":
+                        doCheck("1", r);
+                        break;
+                    case "22":
+                        doCheck("2", r);
                 }
             });
         } else {
-            toLog(response.status);
+            console.log(status);
         }
     });
 }
