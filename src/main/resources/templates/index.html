@@ -8,22 +8,23 @@
 </head>
 <body onload="startAsync()" style="background-color: black; color: white;">
 <h1>Переключатели</h1>
-<h2 id="log">сообщения</h2>
+<h2 id="log"></h2>
 
 <div class="switch">
-    <div style="width: 100px">
-        <img src="img/pngegg.png">
+    <div>
+        <img id="lamp1" src="img/low.png">
     </div>
     <input type="checkbox" id="1" onchange="check(1)">
     <label><i></i></label>
 </div>
 
-<!--<div class="switch">-->
-<!--    <div>-->
-<!--        <img src="img/pngegg.png">-->
-<!--    </div>-->
-<!--    <input type="checkbox" id="2" onchange="check(2)">-->
-<!--    <label><i></i></label>-->
-<!--</div>-->
+<div class="switch">
+    <div>
+        <img id="lamp2" src="img/low.png">
+    </div>
+    <input type="checkbox" id="2" onchange="check(2)">
+    <label><i></i></label>
+</div>
+
 </body>
 </html>

@@ -3,7 +3,7 @@
     height: 50px;
     position: relative;
     float: left;
-    margin-right: 50px;
+    margin: 50px 150px;
 }
 
 .switch label {

@@ -1,3 +1,12 @@
+/* Arduino command:
+ * 10 - sw1 off
+ * 11 - sw1 on
+ * 20 - sw2 off
+ * 21 - sw2 on
+ * 12 - get status sw1
+ * 22 - get status sw2
+ */
+
 const url = "http://" + location.host + "/";
 const TIMEOUT = 2000;
 
@@ -19,8 +28,14 @@ function check(id) {
 
 function doCheck(id, flag) {
     let chBox = document.getElementById(id);
-    chBox.checked = flag == "1" ? true : false;
-    // check(id);
+    let key = flag == "1" ? true : false;
+    chBox.checked = key;
+    switchLamp('lamp' + id, key);
+}
+
+function switchLamp(id, flag) {
+    let srcImg = flag ? 'img/high.png' : 'img/low.png';
+    document.getElementById(id).src = srcImg;
 }
 
 function doGet(id) {
@@ -29,16 +44,16 @@ function doGet(id) {
             response.text().then(function (r) {
                 switch (id) {
                     case "10":
-                        toLog("Выкл 1 ");
+                        switchLamp('lamp1', false);
                         break;
                     case "11":
-                        toLog("Вкл 1 ");
+                        switchLamp('lamp1', true);
                         break;
                     case "20":
-                        toLog("Выкл 2 ");
+                        switchLamp('lamp2', false);
                         break;
                     case "21":
-                        toLog("Вкл 2 ");
+                        switchLamp('lamp2', true);
                         break;
                     case "12":
                         doCheck("1", r);
