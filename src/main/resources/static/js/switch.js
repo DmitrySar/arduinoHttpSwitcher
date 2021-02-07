@@ -26,6 +26,12 @@ function check(id) {
     }
 }
 
+function onClickSw(id) {
+    let chBox = document.getElementById(id);
+    chBox.checked = !chBox.checked;
+    check(id);
+}
+
 function doCheck(id, flag) {
     let chBox = document.getElementById(id);
     let key = flag == "1" ? true : false;
