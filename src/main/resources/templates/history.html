@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>History</title>
+</head>
+<body>
+<div>
+    <table>
+        <th>ID</th>
+        <th>NAME</th>
+        <th>IS SWITCH ON</th>
+        <th>TIME</th>
+        <th>RESULT</th>
+        <tr th:each="h: ${history}">
+            <td th:text="${h.id}"/>
+            <td th:text="${h.name}"/>
+            <td th:text="${h.switchOn}"/>
+            <td th:text="${h.time}"/>
+            <td th:text="${h.result}"/>
+        </tr>
+    </table>
+</div>
+</body>
+</html>
