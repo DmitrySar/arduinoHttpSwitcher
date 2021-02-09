@@ -3,15 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>History</title>
+    <link rel="stylesheet" href="css/table.css">
 </head>
 <body>
+<nav><a href="/">Главная</a> </nav>
+<h1>История</h1>
 <div>
-    <table>
+    <table class="rwd-table">
         <th>ID</th>
-        <th>NAME</th>
-        <th>IS SWITCH ON</th>
-        <th>TIME</th>
-        <th>RESULT</th>
+        <th>Выключатель</th>
+        <th>Состояние</th>
+        <th>Дата и время</th>
+        <th>Результат</th>
         <tr th:each="h: ${history}">
             <td th:text="${h.id}"/>
             <td th:text="${h.name}"/>
