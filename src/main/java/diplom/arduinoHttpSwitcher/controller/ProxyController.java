@@ -14,6 +14,11 @@ public class ProxyController {
 
     @GetMapping("/{id}")
     public String getProxy(@PathVariable String id) {
-        return new RestTemplate().getForObject(url + id, String.class);
+        try {
+            return new RestTemplate().getForObject(url + id, String.class);
+        } catch (Exception e) {
+            return e.getMessage();
+        }
+
     }
 }

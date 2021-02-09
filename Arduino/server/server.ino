@@ -12,8 +12,8 @@
 static uint8_t mac[6] = {0x54, 0x55, 0x58, 0x10, 0x00, 0x24};   
 static uint8_t ip[4] = {192, 168, 1, 63};                      
 static uint16_t port = 80;
-const int SW1 = 3;
-const int SW2 = A2;
+const int SW1 = 2;
+const int SW2 = 3;
  
 ETHER_28J60 ethernet;
  
@@ -29,7 +29,6 @@ void setup() {
 void loop() {
   char* param;
   if (param = ethernet.serviceRequest()) {
-    ethernet.print(F("{\"value\": 11}"));
       if (strcmp(param, "10") == 0) {
         ethernet.print(switcher(SW1, false));
     } else if (strcmp(param, "11") == 0) {

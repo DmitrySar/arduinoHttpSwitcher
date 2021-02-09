@@ -66,6 +66,7 @@ function doGet(id) {
                         break;
                     case "22":
                         doCheck("2", r);
+                    default: toLog(r);
                 }
             });
         } else {
