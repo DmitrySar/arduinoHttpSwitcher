@@ -11,21 +11,29 @@
 <nav><a href="history">История</a></nav>
 <h1>Переключатели</h1>
 
-<div class="switch">
-    <div>
+<div style="float: left">
+    <div style="margin-left: 115px;">
         <img id="lamp1" src="img/low.png">
     </div>
-    <input type="checkbox" id="1" onchange="check(1)" >
-    <label ><i onclick="onClickSw('1')"></i></label>
+
+    <div class="switch">
+
+        <input type="checkbox" id="1" onchange="check(1)" >
+        <label ><i onclick="onClickSw('1')"></i></label>
+    </div>
 </div>
 
-<div class="switch">
-    <div>
+<div style="float: left">
+    <div style="margin-left: 115px;">
         <img id="lamp2" src="img/low.png">
     </div>
-    <input type="checkbox" id="2" onchange="check(2)">
-    <label><i onclick="onClickSw('2')"></i></label>
+
+    <div class="switch">
+        <input type="checkbox" id="2" onchange="check(2)">
+        <label><i onclick="onClickSw('2')"></i></label>
+    </div>
 </div>
+
 <div>
     <h2 id="log"></h2>
 </div>
