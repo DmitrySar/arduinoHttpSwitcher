@@ -8,6 +8,11 @@
 <body>
 <nav><a href="/">Главная</a> </nav>
 <h1>История</h1>
+<form action="history" method="get">
+    Поиск с <input type="datetime-local" name="start" th:value="${start}">
+    по <input type="datetime-local" name="stop" th:value="${stop}">
+    <input type="submit">
+</form>
 <div>
     <table class="rwd-table">
         <th>ID</th>
