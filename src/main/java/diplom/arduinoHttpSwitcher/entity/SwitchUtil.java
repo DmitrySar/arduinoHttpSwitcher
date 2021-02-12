@@ -4,8 +4,8 @@ public class SwitchUtil {
 
     private final static int NUMBER_OF_SWITCH = 0;
     private final static int NUMBER_OF_REQUEST = 1;
-    private final static int NUMBER_STATUS_REQUEST = 2;
-    private final static int SWITCH_ON_REQUEST = 1;
+    private final static char NUMBER_STATUS_REQUEST = '2';
+    private final static char SWITCH_ON_REQUEST = '1';
     private String id;
 
     public SwitchUtil(String id) {
