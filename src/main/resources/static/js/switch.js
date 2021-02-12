@@ -48,6 +48,9 @@ function doGet(id) {
     fetch(url + id).then(function (response) {
         if (response.ok) {
             response.text().then(function (r) {
+                if (r.length > 1) {
+                    toLog(r);
+                }
                 switch (id) {
                     case "10":
                         switchLamp('lamp1', false);
@@ -66,11 +69,11 @@ function doGet(id) {
                         break;
                     case "22":
                         doCheck("2", r);
-                    default: toLog(r);
+                        break;
                 }
             });
         } else {
-            console.log(status);
+            toLog(status);
         }
     });
 }
