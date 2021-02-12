@@ -30,7 +30,8 @@ public class SwitchController {
                              @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
                                      LocalDateTime stop,
                              Model model) {
-        model.addAttribute("history", repository.findByTimeBetween(start, stop));
+        model.addAttribute("historySW1", repository.findByNameAndTimeBetween("SW1", start, stop));
+        model.addAttribute("historySW2", repository.findByNameAndTimeBetween("SW2", start, stop));
         model.addAttribute("start", DateTimeFormatter.ISO_DATE_TIME.format(start));
         model.addAttribute("stop", DateTimeFormatter.ISO_DATE_TIME.format(stop));
         return "history";

@@ -13,14 +13,32 @@
     по <input type="datetime-local" name="stop" th:value="${stop}">
     <input type="submit">
 </form>
-<div>
+<div style="margin: 20px; float: left">
+    Выключатель 1<br>
     <table class="rwd-table">
         <th>ID</th>
         <th>Выключатель</th>
         <th>Состояние</th>
         <th>Дата и время</th>
         <th>Результат</th>
-        <tr th:each="h: ${history}">
+        <tr th:each="h: ${historySW1}">
+            <td th:text="${h.id}"/>
+            <td th:text="${h.name}"/>
+            <td th:text="${h.switchOn}"/>
+            <td th:text="${h.time}"/>
+            <td th:text="${h.result}"/>
+        </tr>
+    </table>
+</div>
+<div style="margin: 20px; float: left">
+    Выключатель 2<br>
+    <table class="rwd-table">
+        <th>ID</th>
+        <th>Выключатель</th>
+        <th>Состояние</th>
+        <th>Дата и время</th>
+        <th>Результат</th>
+        <tr th:each="h: ${historySW2}">
             <td th:text="${h.id}"/>
             <td th:text="${h.name}"/>
             <td th:text="${h.switchOn}"/>
