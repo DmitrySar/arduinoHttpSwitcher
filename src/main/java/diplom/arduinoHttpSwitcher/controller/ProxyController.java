@@ -1,5 +1,6 @@
 package diplom.arduinoHttpSwitcher.controller;
 
+import diplom.arduinoHttpSwitcher.entity.SwitchUtil;
 import diplom.arduinoHttpSwitcher.entity.Switcher;
 import diplom.arduinoHttpSwitcher.repository.SwitcherRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,11 +21,12 @@ public class ProxyController {
 
     @GetMapping("/{id}")
     public String getProxy(@PathVariable String id) {
+        SwitchUtil switchUtil = new SwitchUtil(id);
         try {
             String res = new RestTemplate().getForObject(url + id, String.class);
-            if (id.charAt(1) != '2') {
-                Switcher sw = new Switcher("SW" + id.charAt(0),
-                        id.charAt(1) == '1');
+            if (!switchUtil.isStatusRequest()) {
+                Switcher sw = new Switcher(new SwitchUtil(id).nameGenerate(),
+                        switchUtil.isSwitchOnRequest());
                 sw.setResult(res);
                 repository.save(sw);
             }

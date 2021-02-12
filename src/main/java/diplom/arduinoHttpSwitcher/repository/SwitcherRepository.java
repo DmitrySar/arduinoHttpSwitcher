@@ -10,4 +10,6 @@ import java.util.List;
 @Repository
 public interface SwitcherRepository extends CrudRepository<Switcher, Integer> {
     List<Switcher> findByTimeBetween(LocalDateTime start, LocalDateTime stop);
+    List<Switcher> findByNameAndTimeBetween(String name, LocalDateTime start, LocalDateTime stop);
+
 }

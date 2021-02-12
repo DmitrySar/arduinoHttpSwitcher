@@ -16,7 +16,7 @@ public class Switcher implements ISwitcher {
     private String name;
     private LocalDateTime time;
     private boolean switchOn;
-    String result;
+    private String result;
 
     public Switcher() {
     }
